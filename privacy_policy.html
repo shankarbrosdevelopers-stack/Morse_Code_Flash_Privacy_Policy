@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Morse Code Flash</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0A1524;
+            --surface-color: #0F1D33;
+            --surface-card: #13243F;
+            --surface-card-hover: #172B4B;
+            --border-color: #1E3559;
+            --border-glow: rgba(245, 158, 11, 0.35);
+            --amber-primary: #F59E0B;
+            --amber-light: #FCD34D;
+            --amber-dark: #D97706;
+            --amber-glow: rgba(245, 158, 11, 0.15);
+            --cyan-accent: #38BDF8;
+            --green-accent: #22C55E;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.65;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Top Military / Tactical Status Bar */
+        .status-header {
+            background-color: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(34, 197, 94, 0.12);
+            color: var(--green-accent);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background-color: var(--green-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--green-accent);
+            display: inline-block;
+        }
+
+        .pub-tag {
+            color: var(--amber-primary);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* Hero Header */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: var(--surface-card);
+            border: 1.5px solid var(--border-color);
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 36px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--amber-primary), var(--cyan-accent));
+        }
+
+        .app-icon {
+            width: 88px;
+            height: 88px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 2px solid var(--border-glow);
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.25);
+            background: #0A1524;
+            flex-shrink: 0;
+        }
+
+        .hero-details h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #FFFFFF;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .hero-details .subtitle {
+            font-size: 14px;
+            color: var(--amber-light);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-details .meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* Tactical Summary Card */
+        .summary-card {
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid var(--border-glow);
+            border-radius: 18px;
+            padding: 22px;
+            margin-bottom: 36px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .summary-item .label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .summary-item .value {
+            font-size: 14px;
+            color: var(--amber-primary);
+            font-weight: 700;
+        }
+
+        /* Section Styling */
+        .section-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 24px;
+            transition: border-color 0.2s ease;
+        }
+
+        .section-card:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: var(--amber-glow);
+            border: 1px solid var(--amber-primary);
+            color: var(--amber-primary);
+            font-weight: 800;
+            font-size: 13px;
+        }
+
+        h2 {
+            font-size: 19px;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+
+        p {
+            font-size: 14.5px;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 24px;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--amber-primary);
+            font-size: 18px;
+            position: absolute;
+            left: 6px;
+            top: -2px;
+        }
+
+        strong {
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+
+        /* Permissions Table */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 16px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--surface-color);
+            color: var(--amber-primary);
+            padding: 12px 16px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 14px 16px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(10, 21, 36, 0.4);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .perm-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11.5px;
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--cyan-accent);
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            white-space: nowrap;
+        }
+
+        /* Callout Box */
+        .callout {
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-left: 4px solid var(--green-accent);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 16px 0;
+            font-size: 13.5px;
+            color: #E2E8F0;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(56, 189, 248, 0.05));
+            border: 1.5px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 28px;
+            text-align: center;
+            margin-top: 36px;
+        }
+
+        .contact-box h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--amber-primary);
+            text-decoration: none;
+            background: rgba(10, 21, 36, 0.8);
+            padding: 10px 22px;
+            border-radius: 12px;
+            border: 1px solid var(--border-glow);
+            margin: 14px 0 8px;
+            transition: all 0.2s ease;
+        }
+
+        .contact-email:hover {
+            color: #FFFFFF;
+            background: var(--amber-dark);
+            border-color: var(--amber-primary);
+            box-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 36px;
+            font-size: 12px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            margin-top: 48px;
+        }
+
+        footer p {
+            margin-bottom: 6px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px;
+            }
+            .hero-details .subtitle {
+                justify-content: center;
+            }
+            .container {
+                padding: 20px 16px 60px;
+            }
+            .section-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tactical Top Status Bar -->
+    <header class="status-header mono">
+        <div class="status-badge">PRIVACY PROTOCOL ACTIVE</div>
+        <div class="pub-tag">PUBLISHER: SHANKARBROS.</div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Hero Title Banner -->
+        <div class="hero">
+            <img src="app_icon.png" alt="Morse Code Flash Icon" class="app-icon" onerror="this.style.display='none'">
+            <div class="hero-details">
+                <h1>Privacy Policy</h1>
+                <div class="subtitle">
+                    <span>Morse Code Flash</span>
+                    <span style="color: var(--text-muted);">•</span>
+                    <span class="mono" style="color: var(--cyan-accent);">com.shankarbros.morsecodeflash</span>
+                </div>
+                <div class="meta mono">
+                    Last Updated &amp; Effective: October 2026 | Version 1.0.0
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Summary Highlights -->
+        <div class="summary-card mono">
+            <div class="summary-item">
+                <span class="label">Publisher</span>
+                <span class="value">ShankarBros.</span>
+            </div>
+            <div class="summary-item">
+                <span class="label">Data Collected</span>
+                <span class="value" style="color: var(--green-accent);">ZERO Personal Data</span>
+            </div>
+            <div class="summary-item">
+                <span class="label">Offline Ready</span>
+                <span class="value">100% Core Features</span>
+            </div>
+            <div class="summary-item">
+                <span class="label">Support Contact</span>
+                <span class="value" style="font-size: 13px;">hello@shankarbros.dev</span>
+            </div>
+        </div>
+
+        <!-- 1. Introduction -->
+        <section class="section-card">
+            <div class="section-header">
+                <span class="section-number mono">01</span>
+                <h2>Introduction &amp; Our Commitment</h2>
+            </div>
+            <p>
+                Welcome to <strong>Morse Code Flash</strong>, developed and published by <strong>ShankarBros.</strong> ("we", "us", or "our"). 
+                We believe that learning Morse code and using tactical flashlight communication should be private, safe, and transparent.
+            </p>
+            <p>
+                This Privacy Policy explains how <strong>Morse Code Flash</strong> operates, what permissions it requests, and why we do <strong>not</strong> collect, store, or sell any of your personal data.
+            </p>
+            <div class="callout">
+                <strong>Our Core Philosophy:</strong> Morse Code Flash does not require account creation, registration, email login, or phone numbers. All your practice sessions, learning progress, custom speeds, and streak statistics remain safely stored locally on your device.
+            </div>
+        </section>
+
+        <!-- 2. Device Permissions -->
+        <section class="section-card">
+            <div class="section-header">
+                <span class="section-number mono">02</span>
+                <h2>Device Permissions &amp; Hardware Usage</h2>
+            </div>
+            <p>
+                To provide Morse optical flashing, audio synthesis, and tactile feedback, the application requires specific Android permissions. Here is a clear breakdown of each permission:
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Permission</th>
+                            <th>Hardware Purpose</th>
+                            <th>Privacy Guarantee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="perm-badge">CAMERA / FLASHLIGHT</span></td>
+                            <td>Controls the device torch LED to emit Morse flashes and SOS optical signals.</td>
+                            <td><strong>ZERO photos or videos recorded.</strong> The camera optical sensor is never opened or accessed. Only the flashlight torch hardware is toggled.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="perm-badge">VIBRATE</span></td>
+                            <td>Provides tactile haptic vibrations when tapping the Morse telegraph key and receiving signals.</td>
+                            <td>Haptic motor strictly output-only. No sensor data captured.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="perm-badge">INTERNET / NETWORK</span></td>
+                            <td>Allows Google AdMob to load ads and Google Play to verify optional In-App Billing upgrades.</td>
+                            <td>Core Morse tool, dictionary, and curriculum levels operate 100% offline without internet.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="perm-badge">BILLING</span></td>
+                            <td>Enables purchasing optional Ad-Free Pro upgrades via Google Play Billing.</td>
+                            <td>Payment credentials are encrypted and processed exclusively by Google. ShankarBros. never sees or stores card details.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 3. Third-Party Services -->
+        <section class="section-card">
+            <div class="section-header">
+                <span class="section-number mono">03</span>
+                <h2>Third-Party Services &amp; Libraries</h2>
+            </div>
+            <p>
+                The app integrates certified industry-standard third-party SDKs to support its functionality:
+            </p>
+            <ul>
+                <li>
+                    <strong>Google AdMob (Advertising):</strong> Free versions of the app display banner, interstitial, and rewarded ads provided by Google Mobile Ads SDK. Google may use pseudonymous device advertising identifiers (AD_ID) and diagnostic data to serve ads in compliance with Google Play Developer Policies. You can opt out of personalized ads via your Android Settings &gt; Google &gt; Ads.
+                </li>
+                <li>
+                    <strong>Google Play In-App Billing (IAP):</strong> If you choose to unlock the Ad-Free Pro upgrade, the transaction is processed directly through Google Play Billing. We do not receive, store, or process any payment cards, billing addresses, or financial data.
+                </li>
+            </ul>
+        </section>
+
+        <!-- 4. Data Retention & Storage -->
+        <section class="section-card">
+            <div class="section-header">
+                <span class="section-number mono">04</span>
+                <h2>Data Storage &amp; Retention</h2>
+            </div>
+            <p>
+                All user game progress (curriculum level, mastered characters, streak count, audio frequency preferences, and theme selections) is stored locally on your device via Android's local preferences storage (Jetpack DataStore).
+            </p>
+            <p>
+                We do not maintain any private user databases or external servers. If you clear the app data or uninstall the application, all local statistics will be erased from your device.
+            </p>
+        </section>
+
+        <!-- 5. Children's Privacy -->
+        <section class="section-card">
+            <div class="section-header">
+                <span class="section-number mono">05</span>
+                <h2>Children's Privacy (COPPA Compliance)</h2>
+            </div>
+            <p>
+                Morse Code Flash is an educational and utility app designed for all ages, including radio hobbyists, students, and emergency preparedness enthusiasts.
+            </p>
+            <p>
+                We do not knowingly collect personal identifiable information from children under the age of 13 (or under 16 in the European Economic Area). Our ad configurations adhere to Google Play Families Policy requirements.
+            </p>
+        </section>
+
+        <!-- 6. Security & Policy Changes -->
+        <section class="section-card">
+            <div class="section-header">
+                <span class="section-number mono">06</span>
+                <h2>Security &amp; Policy Updates</h2>
+            </div>
+            <p>
+                Because no personal data is collected or transmitted to external servers, the risk of data compromise is strictly mitigated. We regularly review our security and keep third-party dependencies updated to the latest secure versions.
+            </p>
+            <p>
+                We may periodically update this Privacy Policy to reflect app updates or regulatory changes. Any modifications will be posted directly to this URL with a revised "Last Updated" timestamp.
+            </p>
+        </section>
+
+        <!-- Contact Box -->
+        <div class="contact-box">
+            <h3>Questions or Concerns?</h3>
+            <p style="color: var(--text-secondary); max-width: 520px; margin: 0 auto;">
+                If you have any questions regarding this Privacy Policy or the security of Morse Code Flash, feel free to reach out to the developer directly.
+            </p>
+            <a href="mailto:hello@shankarbros.dev" class="contact-email">hello@shankarbros.dev</a>
+            <div class="mono" style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">
+                Publisher: ShankarBros.
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mono">
+            <p>&copy; 2026 ShankarBros. All rights reserved.</p>
+            <p>Morse Code Flash &bull; Tactical Flashlight &amp; Telegraph Trainer</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
